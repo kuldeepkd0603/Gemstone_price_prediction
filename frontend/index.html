@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diamond Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+        }
+        label, input, select {
+            display: block;
+            margin-top: 10px;
+            width: 100%;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Diamond Price Predictor 💎</h2>
+
+    <label for="carat">Carat:</label>
+    <input type="number" step="0.01" id="carat" />
+
+    <label for="cut">Cut:</label>
+    <select id="cut">
+        <option value="Fair">Fair</option>
+        <option value="Good">Good</option>
+        <option value="Very Good">Very Good</option>
+        <option value="Premium">Premium</option>
+        <option value="Ideal">Ideal</option>
+    </select>
+
+    <label for="color">Color:</label>
+    <select id="color">
+        <option value="J">J</option>
+        <option value="I">I</option>
+        <option value="H">H</option>
+        <option value="G">G</option>
+        <option value="F">F</option>
+        <option value="E">E</option>
+        <option value="D">D</option>
+    </select>
+
+    <label for="clarity">Clarity:</label>
+    <select id="clarity">
+        <option value="I1">I1</option>
+        <option value="SI2">SI2</option>
+        <option value="SI1">SI1</option>
+        <option value="VS2">VS2</option>
+        <option value="VS1">VS1</option>
+        <option value="VVS2">VVS2</option>
+        <option value="VVS1">VVS1</option>
+        <option value="IF">IF</option>
+    </select>
+
+    <label for="depth">Depth:</label>
+    <input type="number" step="0.1" id="depth" />
+
+    <label for="table">Table:</label>
+    <input type="number" step="0.1" id="table" />
+
+    <button onclick="predictPrice()">Predict Price</button>
+
+    <div id="result"></div>
+
+    <script>
+        async function predictPrice() {
+            const inputData = {
+                carat: parseFloat(document.getElementById("carat").value),
+                cut: document.getElementById("cut").value,
+                color: document.getElementById("color").value,
+                clarity: document.getElementById("clarity").value,
+                depth: parseFloat(document.getElementById("depth").value),
+                table: parseFloat(document.getElementById("table").value)
+            };
+
+            try {
+                const response = await fetch("http://127.0.0.1:5000/predict", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(inputData)
+                });
+
+                const data = await response.json();
+                if (data.prediction !== undefined) {
+                    document.getElementById("result").innerText = `Predicted Price: $${data.prediction.toFixed(2)}`;
+                } else {
+                    document.getElementById("result").innerText = `Error: ${data.error}`;
+                }
+            } catch (error) {
+                document.getElementById("result").innerText = "API call failed.";
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>
