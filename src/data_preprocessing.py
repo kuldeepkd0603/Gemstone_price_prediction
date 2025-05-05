@@ -23,13 +23,13 @@ def preprocess_input(input_dict):
         data['cut'] = data['cut'].map(cut_order)
         data['color'] = data['color'].map(color_order)
         data['clarity'] = data['clarity'].map(clarity_order)
-        print(data)
+    
 
         data['log_carat'] = np.log(data['carat'])
         data.drop(['carat'], axis=1, inplace=True)
-        print(data)
+    
         scaled = scaler.transform(data)
-        print(scaled)
+        
 
         return scaled
     except Exception as e:
