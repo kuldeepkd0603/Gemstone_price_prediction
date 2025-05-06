@@ -18,6 +18,7 @@ def predict(input_dict):
             return f"model not found {e}"
         processed_data = preprocess_input(input_dict)
         prediction = model.predict(processed_data)
+
         print(prediction)
         return np.exp(float(prediction[0]))
     except Exception as e:
