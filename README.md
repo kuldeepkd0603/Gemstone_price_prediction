@@ -16,10 +16,7 @@ A machine‐learning pipeline to predict the market price of polished gemstones 
 7. [Pipeline](#pipeline)  
 8. [Modeling](#modeling)  
 9. [Results](#results)  
-10. [Deployment](#deployment)  
-11. [Future Work](#future-work)  
-12. [License](#license)  
-13. [References](#references)  
+10. [Deployment](#deployment)
 
 ---
 
@@ -53,5 +50,7 @@ This project builds and compares regression models (Linear Regression, Random Fo
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/your-username/gemstone-price-prediction.git
+   git clone https://github.com/kuldeepkd0603/Gemstone_price_prediction.git
    cd gemstone-price-prediction
+   pip install -r requirements.txt
+   
