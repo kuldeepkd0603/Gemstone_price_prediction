@@ -51,11 +51,12 @@ This project builds and compares regression models (Linear Regression, Random Fo
 1. **Clone the repo**  
    ```bash
    git clone https://github.com/kuldeepkd0603/Gemstone_price_prediction.git
-   cd gemstone-price-prediction```
-2.**Install requirement.txt file**
-  ```bash
-   pip install -r requirements.txt 
-3.**open two different-different for run app and api seprately**
+   cd gemstone-price-prediction
+2. **Install requirement.txt file**
+   ```bash
+    pip install -r requirements.txt 
+
+3. **Open two different-different for run app and api seprately**
 
    python api.py
 **on other terminal run api**
