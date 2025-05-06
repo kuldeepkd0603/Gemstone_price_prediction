@@ -11,12 +11,7 @@ A machine‐learning pipeline to predict the market price of polished gemstones 
 2. [Features](#features)  
 3. [Tech Stack](#tech-stack)  
 4. [Installation](#installation)  
-5. [Usage](#usage)  
-6. [Data](#data)  
-7. [Pipeline](#pipeline)  
-8. [Modeling](#modeling)  
-9. [Results](#results)  
-10. [Deployment](#deployment)
+
 
 ---
 
@@ -38,11 +33,11 @@ This project builds and compares regression models (Linear Regression, Random Fo
 
 ## Tech Stack
 
-- 🐍 Python 3.8+  
-- 📊 pandas, NumPy, matplotlib  
-- 🔍 scikit-learn, XGBoost  
-- 🔧 Flask  
-- 📒 Jupyter Notebook  
+- Python  
+- pandas, NumPy, matplotlib  
+- scikit-learn, XGBoost  
+- Flask  
+- Jupyter Notebook  
 
 ---
 
@@ -59,7 +54,7 @@ This project builds and compares regression models (Linear Regression, Random Fo
 3. **Open two different-different for run app and api seprately**
    ```base 
    python api.py
-**on other terminal run api**
+4.**on other terminal run api**
    ```base
    cd app
    python app.py
