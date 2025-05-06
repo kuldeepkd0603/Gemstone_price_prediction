@@ -57,10 +57,10 @@ This project builds and compares regression models (Linear Regression, Random Fo
     pip install -r requirements.txt 
 
 3. **Open two different-different for run app and api seprately**
-
+   ```base 
    python api.py
 **on other terminal run api**
-```base
+   ```base
    cd app
    python app.py
 
